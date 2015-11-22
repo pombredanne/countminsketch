@@ -8,11 +8,15 @@ except ImportError:
 
 
 base_path = os.path.dirname(os.path.abspath(__file__))
-long_description = open(os.path.join(base_path, 'README.rst')).read()
+
+long_description = ''
+readme_path = os.path.join(base_path, 'README.rst')
+if os.path.isfile(readme_path):
+    long_description = open(readme_path).read()
 
 setup(
     name="countminsketch",
-    version="0.1",
+    version="0.2",
     description="A minimalistic Count-min Sketch for Python",
     long_description=long_description,
     author="Rafael Carrascosa",
